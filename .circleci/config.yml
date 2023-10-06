@@ -266,7 +266,7 @@ workflows:
           context: << pipeline.parameters.context >>
           shell: op run --env-file op.nonprod.env -- /bin/bash -eo pipefail
           source-env: op.nonprod.env
-          cluster: q3-nonprod-us-east-2
+          cluster: nonprod-us-east-2
           requires:
             - apply nonprod-us-east-2 changes
           filters: *on-push-main
@@ -293,7 +293,7 @@ workflows:
       - replace-nodes:
           name: nightly node replacement job on nonprod-us-east-2
           context: << pipeline.parameters.context >>
-          cluster: q3-nonprod-us-east-2
+          cluster: nonprod-us-east-2
           source-env: op.nonprod.env
 
 
@@ -312,4 +312,4 @@ workflows:
           context: << pipeline.parameters.context >>
           shell: op run --env-file op.nonprod.env -- /bin/bash -eo pipefail
           source-env: op.nonprod.env
-          cluster: q3-nonprod-us-east-2
+          cluster: nonprod-us-east-2
