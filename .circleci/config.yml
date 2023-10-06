@@ -255,7 +255,7 @@ workflows:
             - run:
                 name: create lab-system namespace
                 command: |
-                  export KUBECONFIG=kubeconfig_q3-nonprod-us-east-2
+                  export KUBECONFIG=kubeconfig_nonprod-us-east-2
                   kubectl apply -f lab-system-namespace.yaml
           requires:
             - approve nonprod-us-east-2 changes
