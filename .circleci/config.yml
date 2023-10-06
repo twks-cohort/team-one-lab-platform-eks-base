@@ -223,7 +223,7 @@ workflows:
           terraform-version: << pipeline.parameters.terraform-version >>
           before-terraform:
             - set-environment:
-                cluster: q3-nonprod-us-east-2
+                cluster: nonprod-us-east-2
                 source-env: op.nonprod.env
           filters: *on-push-main
 
@@ -237,18 +237,18 @@ workflows:
           name: apply nonprod-us-east-2 changes
           context: << pipeline.parameters.context >>
           shell: op run --env-file op.nonprod.env -- /bin/bash -eo pipefail
-          workspace: q3-nonprod-us-east-2
+          workspace: nonprod-us-east-2
           terraform-version: << pipeline.parameters.terraform-version >>
           before-terraform:
             - set-environment:
-                cluster: q3-nonprod-us-east-2
+                cluster: nonprod-us-east-2
                 source-env: op.nonprod.env
 #          after-terraform-init:
 #            - taint-node-group:
 #                node-group: group-a
           after-terraform:
             - store-system-credentials:
-                cluster: q3-nonprod-us-east-2
+                cluster: nonprod-us-east-2
             - kube/packages:
                 use-sudo: true
                 kubectl-version: 1.23.5
