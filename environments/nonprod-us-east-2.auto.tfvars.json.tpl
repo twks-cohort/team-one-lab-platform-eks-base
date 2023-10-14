@@ -24,7 +24,7 @@
     "default_node_group_instance_types": ["t2.2xlarge","t3.2xlarge","t3a.2xlarge","m5n.2xlarge","m5.2xlarge","m4.2xlarge"],
 
     "oidc_client_id": "{{ op://cohorts/teamone-svc-auth0/twdpsio-dpsctl-client-id }}",
-    "oidc_groups_claim": "https://github.org/ThoughtWorks-DPS/teams",
+    "oidc_groups_claim": "https://github.com/twks-cohort/teams",
     "oidc_identity_provider_config_name": "Auth0",
-    "oidc_issuer_url": "https://twdpsio.us.auth0.com/"
+    "oidc_issuer_url": "https://dev-2ibzxsfuw1nxh0uw.us.auth0.com/"
 }
